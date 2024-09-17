@@ -16,7 +16,8 @@ void create() {
     system("cls");
     print();
     cout<<"Enter name of the tube: ";
-    cin>>name;
+    cin.ignore();
+    getline(cin, name);
     system("cls");
     print();
     do {
@@ -146,6 +147,7 @@ void create() {
         cin>>amount_inwork;
         if (amount_inwork > amount || amount_inwork < 0) {
             workshop_flag = 1;
+            amount_inwork = -1;
         }
         if (cin.fail()) {
             cin.clear();
@@ -183,7 +185,7 @@ void edit(){
     bool flag = 0;
     if (editable) {
     do {
-        cout<<"Enter 1 to stop 1 workshop or 0 to launch one."<<name<<" Currently "<<amount<<" in total, "<<amount_inwork<<" working.";
+        cout<<"Enter 1 to stop 1 workshop or 0 to launch one.\n"<<"Currently "<<amount<<" in total, "<<amount_inwork<<" working.\n";
         cin>>workbool;
         if (cin.fail()) {
             cin.clear();
@@ -191,7 +193,7 @@ void edit(){
             flag = 1;
         } 
         else {
-            if (workbool && amount_inwork >= 0) {
+            if (workbool && amount_inwork > 0) {
                 amount_inwork--;
                 flag = 0;
             }
@@ -199,8 +201,17 @@ void edit(){
                 amount_inwork++;
                 flag = 0;
             }
+            else {
+                cout<<"Input error. Read the instructions and try more.\n";
+                system("pause");
+            }
+            
         }
-        system("cls");
+        if (flag) {
+            cout<<"Input error. Read the instructions and try more.\n";
+            system("pause");
+        }
+        
         } while (flag);
         
     }  

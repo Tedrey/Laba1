@@ -19,7 +19,7 @@ int main()
         
         string choise;
         
-        cout<<"Choose option"<<"\n"<<"1. Add tube "<<"\n"<<"2. Add Compress station "<<"\n"<<"3. Show list of objects "<<"\n"<<"4. Edit a tube "<<"\n"<<"5. Edit refunery "<<"\n"<<"6. Save all"<<"\n"<<"7. Load from file "<<"\n"<<"0. Exit"<<"\n";
+        cout<<"Choose option"<<"\n"<<"1. Add tube "<<"\n"<<"2. Add Compress station "<<"\n"<<"3. Show list of objects "<<"\n"<<"4. Edit a tube "<<"\n"<<"5. Edit compress station "<<"\n"<<"6. Save all"<<"\n"<<"7. Load from file "<<"\n"<<"0. Exit"<<"\n";
         cout<<"In the case of entering don't have a command, you will have to enter again\n";
         cin>>choise;
         
@@ -49,7 +49,7 @@ int main()
                 case '3':
                     if (cur_tube.editable) 
                     {
-                        cur_tube.print();
+                        cur_tube.print ();
                     }
                     if (cur_cs.editable) 
                     {
@@ -125,7 +125,7 @@ int main()
                     else
                     {
                         cout<<"Looks like you have no saved objects. Try to Create a new one.\n";
-                    }
+                    }                
                     inf.close();
                     system("pause");
                     break;
