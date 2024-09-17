@@ -10,7 +10,6 @@ public:
     int diametr = 0;
     bool in_repair = 0;
     bool editable = 0;
-    
 
 void create() {
     editable = 1;
@@ -189,6 +188,7 @@ void edit(){
         if (cin.fail()) {
             cin.clear();
             cin.ignore();
+            flag = 1;
         } 
         else {
             if (workbool && amount_inwork >= 0) {
@@ -199,13 +199,17 @@ void edit(){
                 amount_inwork++;
                 flag = 0;
             }
-            else {
+        }
+        system("cls");
+        } while (flag);
+        
+    }  
+        
+    else {
                 cout<<"You didn't created any of compressor stations. Try to Create a new or Load one from file.";
                 cout<<"Enter any input to return into menu.\n";
                 system("pause");
             }
-        }
-        system("cls");
-        } while (flag);
-    }
+}
 };
+

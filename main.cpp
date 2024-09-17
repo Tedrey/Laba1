@@ -108,7 +108,7 @@ int main()
 
                     if(readl == "test" && saved_tube != "-" or saved_cs != "-")
                     {
-                        cout << "Sucsessfully up loaded data:\n";
+                        cout << "Sucsessfully uploaded data!\n";
                         
                         if (saved_tube != "-")
                         {
@@ -118,7 +118,6 @@ int main()
                         if (saved_cs != "-")
                         {
                             istringstream stream_cs(saved_cs);
-                            cout<<"!!!!!!!!!!!!!!!!!!!!!!!!"<<saved_cs;
                             stream_cs>>cur_cs.name>>cur_cs.amount>>cur_cs.amount_inwork>>cur_cs.fdc>>cur_cs.editable;
                         }
                         
@@ -136,5 +135,4 @@ int main()
             }
         }
     }
-    return 1;
 }
